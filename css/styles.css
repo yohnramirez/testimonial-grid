@@ -1,0 +1,117 @@
+:root{
+    --moderateViolet: hsl(263, 55%, 52%);
+    --veryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --veryDarkBlackishBlue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+    /* Neutral */
+    --lightGray: hsl(0, 0%, 81%);
+    --lightGrayishBlue: hsl(210, 46%, 95%);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+    background: rgb(192, 206, 238);
+}
+
+/* GENERAL STYLES */
+.tittle-white{
+    font-weight: 600;
+    color: var(--white);
+}
+.tittle-gray{
+    font-weight: 600;
+    color: var(--veryDarkBlackishBlue);
+}
+.text-gray-light{
+    font-weight: 400;
+    color: var(--lightGray);
+    line-height: 20px;
+}
+.text-gray-dark{
+    font-weight: 400;
+    color: var(--veryDarkGrayishBlue);
+    line-height: 20px;
+}
+.name-profile-light{
+    color: var(--white);
+}
+.occupation-profile-light{
+    color: var(--lightGray);
+    opacity: 50%;
+    line-height: 1px;
+}
+.name-profile-dark{
+    color: var(--veryDarkBlackishBlue);
+}
+.occupation-profile-dark{
+    color: var(--veryDarkGrayishBlue);
+    opacity: 50%;
+    line-height: 1px;
+}
+/* CONTAINER */
+.container{
+    margin: 20px auto;
+    max-width: 1100px;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "card-one card-one card-two card-three"
+                         "card-four card-five card-five card-three";
+}
+
+/* CARD STYLES */
+.card{
+    border-radius: 10px;
+    padding: 20px;
+}
+.card-profile{
+    display: flex;
+    align-items: center;
+}
+.card-profile img{
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
+/* CARDS */
+.card-one{
+    grid-area: card-one;
+    background: var(--moderateViolet) url(../images/bg-pattern-quotation.svg) no-repeat;
+    background-position: 350px 20px;
+}
+.card-two{
+    grid-area: card-two;
+    background: var(--veryDarkGrayishBlue);
+}
+.card-three{
+    grid-area: card-three;
+    background: var(--white);
+}
+.card-four{
+    grid-area: card-four;
+    background: var(--white);
+}
+.card-five{
+    grid-area: card-five;
+    background: var(--veryDarkBlackishBlue);
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (max-width:800px){
+    .container{
+        margin: 0 20px;
+        grid-template-areas: "card-one card-one card-one card-one"
+                             "card-two card-two card-two card-two"
+                             "card-three card-three card-three card-three"
+                             "card-four card-four card-four card-four"
+                             "card-five card-five card-five card-five";
+    }
+}
